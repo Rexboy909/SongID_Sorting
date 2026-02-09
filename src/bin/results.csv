@@ -1,12 +1,12 @@
 Algorithm,Time (nanoseconds),Time (milliseconds)
-Sequential Search,230300,0.2303
-Binary Search,2300,0.0023
-Selection (Search),2000,0.002
-Insertion (Search),2200,0.0022
-Bubble (Search),2200,0.0022
-Merge (By Playcount),1200,0.0012
-Quick (By Playcount),2800,0.0028
-Heap (By Playcount),2000,0.002
-Merge (By Date),1800,0.0018
-Quick (By Date),3800,0.0038
-Heap (By Date),2000,0.002
+Sequential Search,373900,0.3739
+Binary Search,4300,0.0043
+Selection (Search),70300,0.0703
+Insertion (Search),56700,0.0567
+Bubble (Search),55500,0.0555
+Merge (By Playcount),935300,0.9353
+Quick (By Playcount),1613500,1.6135
+Heap (By Playcount),1747000,1.747
+Merge (By Date),3258300,3.2583
+Quick (By Date),1556300,1.5563
+Heap (By Date),1889200,1.8892

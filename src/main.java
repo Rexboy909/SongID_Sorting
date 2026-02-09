@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class main {
     public static void main(String[] args) {
         CSVReader reader = new CSVReader();
-        ArrayList<Song> songs = reader.readSongs("data/songs10k.csv", 2000);
+        ArrayList<Song> songs = reader.readSongs("../data/songs10k.csv", 2000);
         
         // Test algorithms and collect results
         ArrayList<String> results = new ArrayList<>();
