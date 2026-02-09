@@ -1,10 +1,10 @@
 public class Song {
-    private String songId;
-    private String artist;
-    private String genre;
-    private String duration;
-    private int playCount;
-    private String dateAdded;
+    private final String songId;
+    private final String artist;
+    private final String genre;
+    private final String duration;
+    private final int playCount;
+    private final String dateAdded;
 
     public Song(String songId, String artist, String genre, String duration, int playCount, String dateAdded) {
         this.songId = songId;

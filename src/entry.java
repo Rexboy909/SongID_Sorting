@@ -2,7 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class main {
+public class entry {
     public static void main(String[] args) {
         CSVReader reader = new CSVReader();
         ArrayList<Song> songs = reader.readSongs("../data/songs10k.csv", 2000);
