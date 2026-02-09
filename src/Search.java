@@ -31,33 +31,5 @@ public class Search {
         return -1;
     }
 
-    // Selection Search
-    public static int selectionSearch(ArrayList<Song> songs, int targetPlayCount) {
-        for (int i = 0; i < songs.size(); i++) {
-            if (songs.get(i).getPlayCount() == targetPlayCount) {
-                return i;
-            }
-        }
-        return -1;
-    }
 
-    // Insertion Search
-    public static int insertionSearch(ArrayList<Song> songs, int targetPlayCount) {
-        for (int i = 0; i < songs.size(); i++) {
-            if (songs.get(i).getPlayCount() == targetPlayCount) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    // Bubble Search
-    public static int bubbleSearch(ArrayList<Song> songs, int targetPlayCount) {
-        for (int i = 0; i < songs.size(); i++) {
-            if (songs.get(i).getPlayCount() == targetPlayCount) {
-                return i;
-            }
-        }
-        return -1;
-    }
 }
