@@ -1,7 +1,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.function.Consumer;
 
 public class entry {
     private static final ArrayList<String> results = new ArrayList<>();
@@ -22,36 +21,71 @@ public class entry {
 
     private static void testSearchAlgorithms() {
         System.out.println("=== SEARCH ALGORITHMS ===");
-        testSearch("Sequential Search", s -> Search.sequentialSearch(s, 5000), false);
-        testSearch("Binary Search", s -> Search.binarySearch(s, 5000), true);
+        testSequentialSearch();
+        testBinarySearch();
     }
 
     private static void testSortAlgorithms() {
         System.out.println("\n=== SORTING ALGORITHMS ===");
-        testSort("Merge (By Playcount)", Sort::mergeSort);
-        testSort("Quick (By Playcount)", Sort::quickSort);
-        testSort("Heap (By Playcount)", Sort::heapSort);
+        testMergeSort();
+        testQuickSort();
+        testHeapSort();
     }
 
     private static void testSortByDate() {
         System.out.println("\n=== SORTING ALGORITHMS (By Date Added) ===");
-        testSort("Merge (By Date)", Sort::mergeSortByDate);
-        testSort("Quick (By Date)", Sort::quickSortByDate);
-        testSort("Heap (By Date)", Sort::heapSortByDate);
+        testMergeSortByDate();
+        testQuickSortByDate();
+        testHeapSortByDate();
     }
 
-    private static void testSearch(String name, Consumer<ArrayList<Song>> algorithm, boolean needsSort) {
+    private static void testSequentialSearch() {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
-        if (needsSort) Sort.mergeSort(testSongs);
-        
-        long time = Timer.timeSearch(() -> algorithm.accept(testSongs));
-        recordResult(name, time);
+        long time = Timer.timeSearch(() -> Search.sequentialSearch(testSongs, 5000));
+        recordResult("Sequential Search", time);
     }
 
-    private static void testSort(String name, Consumer<ArrayList<Song>> algorithm) {
+    private static void testBinarySearch() {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
-        long time = Timer.timeSort(() -> algorithm.accept(testSongs));
-        recordResult(name, time);
+        Sort.mergeSort(testSongs);
+        long time = Timer.timeSearch(() -> Search.binarySearch(testSongs, 5000));
+        recordResult("Binary Search", time);
+    }
+
+    private static void testMergeSort() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.mergeSort(testSongs));
+        recordResult("Merge (By Playcount)", time);
+    }
+
+    private static void testQuickSort() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.quickSort(testSongs));
+        recordResult("Quick (By Playcount)", time);
+    }
+
+    private static void testHeapSort() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.heapSort(testSongs));
+        recordResult("Heap (By Playcount)", time);
+    }
+
+    private static void testMergeSortByDate() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.mergeSortByDate(testSongs));
+        recordResult("Merge (By Date)", time);
+    }
+
+    private static void testQuickSortByDate() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.quickSortByDate(testSongs));
+        recordResult("Quick (By Date)", time);
+    }
+
+    private static void testHeapSortByDate() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.heapSortByDate(testSongs));
+        recordResult("Heap (By Date)", time);
     }
 
     private static void recordResult(String name, long time) {
