@@ -1,10 +1,33 @@
 Algorithm,Time (nanoseconds),Time (milliseconds)
-Sequential Search,1036600,1.0366
-Binary Search,14800,0.0148
-Merge (By Playcount),2948600,2.9486
-Quick (By Playcount),2938000,2.938
-Heap (By Playcount),3077600,3.0776
-Merge (By Date),5808200,5.8082
-Quick (By Date),3875000,3.875
-Heap (By Date),5556600,5.5566
 
+1000 SONGS,,
+Sequential Search,459200,0.4592
+Binary Search,4600,0.0046
+Merge (By Playcount),521600,0.5216
+Quick (By Playcount),930000,0.93
+Heap (By Playcount),700100,0.7001
+Bubble (By Playcount),12643400,12.6434
+Insertion (By Playcount),5567100,5.5671
+Selection (By Playcount),5949100,5.9491
+Merge (By Date),1529600,1.5296
+Quick (By Date),756200,0.7562
+Heap (By Date),1212900,1.2129
+Bubble (By Date),14782400,14.7824
+Insertion (By Date),6371700,6.3717
+Selection (By Date),12344100,12.3441
+
+10000 SONGS,,
+Sequential Search,667900,0.6679
+Binary Search,4200,0.0042
+Merge (By Playcount),15962200,15.9622
+Quick (By Playcount),3631800,3.6318
+Heap (By Playcount),2960900,2.9609
+Bubble (By Playcount),230623200,230.6232
+Insertion (By Playcount),61892600,61.8926
+Selection (By Playcount),107840100,107.8401
+Merge (By Date),29895900,29.8959
+Quick (By Date),13209100,13.2091
+Heap (By Date),7319100,7.3191
+Bubble (By Date),1264960000,1264.96
+Insertion (By Date),229853800,229.8538
+Selection (By Date),511503600,511.5036

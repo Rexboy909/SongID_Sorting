@@ -4,127 +4,131 @@ import java.util.ArrayList;
 
 public class entry {
     private static final ArrayList<String> results = new ArrayList<>();
-    private static final ArrayList<Song> songs = new ArrayList<>();
 
     public static void main(String[] args) {
-        CSVReader reader = new CSVReader();
-        songs.addAll(reader.readSongs("../data/songs10k.csv", 2000));
-        
         results.add("Algorithm,Time (nanoseconds),Time (milliseconds)");
-        
-        testSearchAlgorithms();
-        testSortAlgorithms();
-        testSortByDate();
-        
+        results.add("");
+        runAllTestsForDataset("1000 SONGS", "data/songs1k.csv", 1000);
+        results.add("");
+        runAllTestsForDataset("10000 SONGS", "data/songs10k.csv", 10000);
         writeResultsToCSV();
     }
 
-    private static void testSearchAlgorithms() {
+    private static void runAllTestsForDataset(String label, String filePath, int numLines) {
+        CSVReader reader = new CSVReader();
+        ArrayList<Song> songs = reader.readSongs(filePath, numLines);
+        results.add(label + ",,");
+        testSearchAlgorithms(songs);
+        testSortAlgorithms(songs);
+        testSortByDate(songs);
+    }
+
+    private static void testSearchAlgorithms(ArrayList<Song> songs) {
         System.out.println("=== SEARCH ALGORITHMS ===");
-        testSequentialSearch();
-        testBinarySearch();
+        testSequentialSearch(songs);
+        testBinarySearch(songs);
     }
 
-    private static void testSortAlgorithms() {
+    private static void testSortAlgorithms(ArrayList<Song> songs) {
         System.out.println("\n=== SORTING ALGORITHMS ===");
-        testMergeSort();
-        testQuickSort();
-        testHeapSort();
-        testBubbleSort();
-        testInsertionSort();
-        testSelectionSort();
+        testMergeSort(songs);
+        testQuickSort(songs);
+        testHeapSort(songs);
+        testBubbleSort(songs);
+        testInsertionSort(songs);
+        testSelectionSort(songs);
     }
 
-    private static void testSortByDate() {
+    private static void testSortByDate(ArrayList<Song> songs) {
         System.out.println("\n=== SORTING ALGORITHMS (By Date Added) ===");
-        testMergeSortByDate();
-        testQuickSortByDate();
-        testHeapSortByDate();
-        testBubbleSortByDate();
-        testInsertionSortByDate();
-        testSelectionSortByDate();
+        testMergeSortByDate(songs);
+        testQuickSortByDate(songs);
+        testHeapSortByDate(songs);
+        testBubbleSortByDate(songs);
+        testInsertionSortByDate(songs);
+        testSelectionSortByDate(songs);
     }
 
-    private static void testSequentialSearch() {
+    private static void testSequentialSearch(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSearch(() -> Search.sequentialSearch(testSongs, 5000));
         recordResult("Sequential Search", time);
     }
 
-    private static void testBinarySearch() {
+    private static void testBinarySearch(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         Sort.mergeSort(testSongs);
         long time = Timer.timeSearch(() -> Search.binarySearch(testSongs, 5000));
         recordResult("Binary Search", time);
     }
 
-    private static void testMergeSort() {
+    private static void testMergeSort(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.mergeSort(testSongs));
         recordResult("Merge (By Playcount)", time);
     }
 
-    private static void testQuickSort() {
+    private static void testQuickSort(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.quickSort(testSongs));
         recordResult("Quick (By Playcount)", time);
     }
 
-    private static void testHeapSort() {
+    private static void testHeapSort(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.heapSort(testSongs));
         recordResult("Heap (By Playcount)", time);
     }
 
-    private static void testMergeSortByDate() {
+    private static void testMergeSortByDate(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.mergeSortByDate(testSongs));
         recordResult("Merge (By Date)", time);
     }
 
-    private static void testQuickSortByDate() {
+    private static void testQuickSortByDate(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.quickSortByDate(testSongs));
         recordResult("Quick (By Date)", time);
     }
 
-    private static void testHeapSortByDate() {
+    private static void testHeapSortByDate(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.heapSortByDate(testSongs));
         recordResult("Heap (By Date)", time);
     }
 
-    private static void testBubbleSort() {
+    private static void testBubbleSort(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.bubbleSort(testSongs));
         recordResult("Bubble (By Playcount)", time);
     }
 
-    private static void testInsertionSort() {
+    private static void testInsertionSort(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.insertionSort(testSongs));
         recordResult("Insertion (By Playcount)", time);
     }
 
-    private static void testSelectionSort() {
+    private static void testSelectionSort(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.selectionSort(testSongs));
         recordResult("Selection (By Playcount)", time);
     }
 
-    private static void testBubbleSortByDate() {
+    private static void testBubbleSortByDate(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.bubbleSortByDate(testSongs));
         recordResult("Bubble (By Date)", time);
     }
 
-    private static void testInsertionSortByDate() {
+    private static void testInsertionSortByDate(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.insertionSortByDate(testSongs));
         recordResult("Insertion (By Date)", time);
     }
 
-    private static void testSelectionSortByDate() {
+    private static void testSelectionSortByDate(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.selectionSortByDate(testSongs));
         recordResult("Selection (By Date)", time);
