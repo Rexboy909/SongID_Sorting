@@ -15,11 +15,6 @@ Describe dependencies and steps, e.g., Node/Python versions and install commands
 ## Usage
 Provide a minimal example: how to run, input file path, output file or result description.
 
-Example:
-```bash
-python sort_songs.py --input data/songs.csv --output dist/sorted.csv --by SongID --order asc
-```
-
 ## Data Format
 - Input: fields such as SongID, Title, Artist, Album, Duration, PlayCount
 - Output: same fields, sorted order
