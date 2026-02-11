@@ -10,44 +10,44 @@ Sort and filter song data by SongID for quick lookup and statistics.
 
 Search:
 - Linear (Sequential) Search:
-  - n=1k: ~0.46 ms
-  - n=10k: ~0.67 ms
+  - n=1k: ~0.34 ms
+  - n=10k: ~1.01 ms
   - Observation: Time grows roughly proportionally with n.
 - Binary Search (on sorted data):
-  - n=1k: ~0.005 ms
-  - n=10k: ~0.004 ms
+  - n=1k: ~0.0036 ms
+  - n=10k: ~0.0045 ms
   - Observation: Very small increase as n grows.
 
 Sort:
 - Bubble Sort (quadratic baseline):
-  - n=1k: ~12.6 ms (by playcount), ~14.8 ms (by date)
-  - n=10k: ~230 ms (by playcount), ~1265 ms (by date)
+  - n=1k: ~9.46 ms (by playcount), ~14.54 ms (by date)
+  - n=10k: ~131.54 ms (by playcount), ~799.29 ms (by date)
   - Observation: Rapid growth; scales poorly beyond small n.
 - Merge/Quick/Heap Sort (O(n log n)):
-  - n=1k: Merge ~0.52 ms, Quick ~0.93 ms, Heap ~0.70 ms (by playcount)
-  - n=10k: Merge ~16 ms, Quick ~3.6 ms, Heap ~3.0 ms (by playcount)
+  - n=1k: Merge ~0.4 ms, Quick ~0.78 ms, Heap ~0.60 ms (by playcount)
+  - n=10k: Merge ~6.15 ms, Quick ~3.67 ms, Heap ~2.07 ms (by playcount)
   - Observation: Gradual increase; scales predictably.
 
 ### Big-O Mapping
 - Linear Search: O(n)
 - Binary Search: O(log n) (requires sorted data)
 - Bubble Sort: O(n²)
-- Merge/Tim/Quick Sort: O(n log n)
+- Merge/Heap/Quick Sort: O(n log n)
 
 ### Evidence Table
 
 | Algorithm     | Observed Behavior            | Big-O     | Evidence / Notes                               |
 |---------------|------------------------------|-----------|-----------------------------------------------|
-| Linear Search | Time increased steadily      | O(n)      | 1k: 0.46 ms; 10k: 0.67 ms                     |
-| Binary Search | Small increase               | O(log n)  | 1k: 0.005 ms; 10k: 0.004 ms                   |
-| Bubble Sort   | Rapid increase               | O(n²)     | 1k: 12.6 ms; 10k: 230 ms (by playcount)       |
-| Merge/Quick/Heap Sort | Gradual increase     | O(n log n)| 1k: 0.52–0.93 ms; 10k: 3.0–16 ms (by playcount)|
+| Linear Search | Time increased steadily      | O(n)      | 1k: 0.34 ms; 10k: 0.1.01 ms                     |
+| Binary Search | Small increase               | O(log n)  | 1k: 0.0036 ms; 10k: 0.0045 ms                   |
+| Bubble Sort   | Rapid increase               | O(n²)     | 1k: 9.46 ms; 10k: 131.54 ms (by playcount)       |
+| Merge/Quick/Heap Sort | Gradual increase     | O(n log n)| 1k: 0.4–0.78 ms; 10k: 2.06–6.15 ms (by playcount)|
 
 ### Recommendations (Scenario-Based)
 - Which search algorithm is best?
   - Use Binary Search when data is sorted or indexable; otherwise Linear Search for one-off lookups on small datasets.
 - Which sort algorithm is best?
-  - Use O(n log n) sorts (Merge/Tim/Quick). Avoid Bubble Sort except for teaching or tiny arrays.
+  - Use O(n log n) sorts (Merge/Heap/Quick). Avoid Bubble Sort except for teaching or tiny arrays.
 - Justification:
   - Observations match Big-O: binary search scales with log n; n log n sorting remains practical up to large n, while n² explodes.
 

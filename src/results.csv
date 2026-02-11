@@ -1,33 +1,33 @@
 Algorithm,Time (nanoseconds),Time (milliseconds)
 
 1000 SONGS,,
-Sequential Search,459200,0.4592
-Binary Search,4600,0.0046
-Merge (By Playcount),521600,0.5216
-Quick (By Playcount),930000,0.93
-Heap (By Playcount),700100,0.7001
-Bubble (By Playcount),12643400,12.6434
-Insertion (By Playcount),5567100,5.5671
-Selection (By Playcount),5949100,5.9491
-Merge (By Date),1529600,1.5296
-Quick (By Date),756200,0.7562
-Heap (By Date),1212900,1.2129
-Bubble (By Date),14782400,14.7824
-Insertion (By Date),6371700,6.3717
-Selection (By Date),12344100,12.3441
+Sequential Search,338000,0.338
+Binary Search,3600,0.0036
+Merge (By Playcount),398700,0.3987
+Quick (By Playcount),775500,0.7755
+Heap (By Playcount),604900,0.6049
+Bubble (By Playcount),9455600,9.4556
+Insertion (By Playcount),5445400,5.4454
+Selection (By Playcount),6968700,6.9687
+Merge (By Date),1809800,1.8098
+Quick (By Date),709000,0.709
+Heap (By Date),1303600,1.3036
+Bubble (By Date),14541200,14.5412
+Insertion (By Date),5862000,5.862
+Selection (By Date),7412500,7.4125
 
 10000 SONGS,,
-Sequential Search,667900,0.6679
-Binary Search,4200,0.0042
-Merge (By Playcount),15962200,15.9622
-Quick (By Playcount),3631800,3.6318
-Heap (By Playcount),2960900,2.9609
-Bubble (By Playcount),230623200,230.6232
-Insertion (By Playcount),61892600,61.8926
-Selection (By Playcount),107840100,107.8401
-Merge (By Date),29895900,29.8959
-Quick (By Date),13209100,13.2091
-Heap (By Date),7319100,7.3191
-Bubble (By Date),1264960000,1264.96
-Insertion (By Date),229853800,229.8538
-Selection (By Date),511503600,511.5036
+Sequential Search,1010500,1.0105
+Binary Search,4500,0.0045
+Merge (By Playcount),6150100,6.1501
+Quick (By Playcount),3673200,3.6732
+Heap (By Playcount),2066100,2.0661
+Bubble (By Playcount),131544200,131.5442
+Insertion (By Playcount),39916900,39.9169
+Selection (By Playcount),68836300,68.8363
+Merge (By Date),14943800,14.9438
+Quick (By Date),5258600,5.2586
+Heap (By Date),4981800,4.9818
+Bubble (By Date),799287800,799.2878
+Insertion (By Date),140021600,140.0216
+Selection (By Date),305821100,305.8211
