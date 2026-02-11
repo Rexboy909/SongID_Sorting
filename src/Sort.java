@@ -239,4 +239,98 @@ public class Sort {
             heapifyByDate(songs, n, largest);
         }
     }
+
+    // ===== O(n^2) SORTS BY PLAY COUNT =====
+
+    // Bubble Sort - O(n^2)
+    public static void bubbleSort(ArrayList<Song> songs) {
+        int n = songs.size();
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (songs.get(j).getPlayCount() > songs.get(j + 1).getPlayCount()) {
+                    Song temp = songs.get(j);
+                    songs.set(j, songs.get(j + 1));
+                    songs.set(j + 1, temp);
+                }
+            }
+        }
+    }
+
+    // Insertion Sort - O(n^2)
+    public static void insertionSort(ArrayList<Song> songs) {
+        for (int i = 1; i < songs.size(); i++) {
+            Song key = songs.get(i);
+            int j = i - 1;
+            
+            while (j >= 0 && songs.get(j).getPlayCount() > key.getPlayCount()) {
+                songs.set(j + 1, songs.get(j));
+                j--;
+            }
+            songs.set(j + 1, key);
+        }
+    }
+
+    // Selection Sort - O(n^2)
+    public static void selectionSort(ArrayList<Song> songs) {
+        int n = songs.size();
+        for (int i = 0; i < n - 1; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j < n; j++) {
+                if (songs.get(j).getPlayCount() < songs.get(minIdx).getPlayCount()) {
+                    minIdx = j;
+                }
+            }
+            
+            Song temp = songs.get(i);
+            songs.set(i, songs.get(minIdx));
+            songs.set(minIdx, temp);
+        }
+    }
+
+    // ===== O(n^2) SORTS BY DATE =====
+
+    // Bubble Sort by Date - O(n^2)
+    public static void bubbleSortByDate(ArrayList<Song> songs) {
+        int n = songs.size();
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (songs.get(j).getDateAdded().compareTo(songs.get(j + 1).getDateAdded()) > 0) {
+                    Song temp = songs.get(j);
+                    songs.set(j, songs.get(j + 1));
+                    songs.set(j + 1, temp);
+                }
+            }
+        }
+    }
+
+    // Insertion Sort by Date - O(n^2)
+    public static void insertionSortByDate(ArrayList<Song> songs) {
+        for (int i = 1; i < songs.size(); i++) {
+            Song key = songs.get(i);
+            int j = i - 1;
+            
+            while (j >= 0 && songs.get(j).getDateAdded().compareTo(key.getDateAdded()) > 0) {
+                songs.set(j + 1, songs.get(j));
+                j--;
+            }
+            songs.set(j + 1, key);
+        }
+    }
+
+    // Selection Sort by Date - O(n^2)
+    public static void selectionSortByDate(ArrayList<Song> songs) {
+        int n = songs.size();
+        for (int i = 0; i < n - 1; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j < n; j++) {
+                if (songs.get(j).getDateAdded().compareTo(songs.get(minIdx).getDateAdded()) < 0) {
+                    minIdx = j;
+                }
+            }
+            
+            Song temp = songs.get(i);
+            songs.set(i, songs.get(minIdx));
+            songs.set(minIdx, temp);
+        }
+    }
 }

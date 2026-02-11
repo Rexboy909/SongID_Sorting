@@ -30,6 +30,9 @@ public class entry {
         testMergeSort();
         testQuickSort();
         testHeapSort();
+        testBubbleSort();
+        testInsertionSort();
+        testSelectionSort();
     }
 
     private static void testSortByDate() {
@@ -37,6 +40,9 @@ public class entry {
         testMergeSortByDate();
         testQuickSortByDate();
         testHeapSortByDate();
+        testBubbleSortByDate();
+        testInsertionSortByDate();
+        testSelectionSortByDate();
     }
 
     private static void testSequentialSearch() {
@@ -86,6 +92,42 @@ public class entry {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         long time = Timer.timeSort(() -> Sort.heapSortByDate(testSongs));
         recordResult("Heap (By Date)", time);
+    }
+
+    private static void testBubbleSort() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.bubbleSort(testSongs));
+        recordResult("Bubble (By Playcount)", time);
+    }
+
+    private static void testInsertionSort() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.insertionSort(testSongs));
+        recordResult("Insertion (By Playcount)", time);
+    }
+
+    private static void testSelectionSort() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.selectionSort(testSongs));
+        recordResult("Selection (By Playcount)", time);
+    }
+
+    private static void testBubbleSortByDate() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.bubbleSortByDate(testSongs));
+        recordResult("Bubble (By Date)", time);
+    }
+
+    private static void testInsertionSortByDate() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.insertionSortByDate(testSongs));
+        recordResult("Insertion (By Date)", time);
+    }
+
+    private static void testSelectionSortByDate() {
+        ArrayList<Song> testSongs = new ArrayList<>(songs);
+        long time = Timer.timeSort(() -> Sort.selectionSortByDate(testSongs));
+        recordResult("Selection (By Date)", time);
     }
 
     private static void recordResult(String name, long time) {
