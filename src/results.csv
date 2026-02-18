@@ -1,33 +1,33 @@
 Algorithm,Time (nanoseconds),Time (milliseconds)
 
 1000 SONGS,,
-Sequential Search,338000,0.338
-Binary Search,3600,0.0036
-Merge (By Playcount),398700,0.3987
-Quick (By Playcount),775500,0.7755
-Heap (By Playcount),604900,0.6049
-Bubble (By Playcount),9455600,9.4556
-Insertion (By Playcount),5445400,5.4454
-Selection (By Playcount),6968700,6.9687
-Merge (By Date),1809800,1.8098
-Quick (By Date),709000,0.709
-Heap (By Date),1303600,1.3036
-Bubble (By Date),14541200,14.5412
-Insertion (By Date),5862000,5.862
-Selection (By Date),7412500,7.4125
+Sequential Search (By SongID),378300,0.3783
+Binary Search (By SongID),17100,0.0171
+Merge (By Playcount),358700,0.3587
+Quick (By Playcount),1338400,1.3384
+Heap (By Playcount),896000,0.896
+Bubble (By Playcount),13553600,13.5536
+Insertion (By Playcount),5637700,5.6377
+Selection (By Playcount),7022000,7.022
+Merge (By Date),2286100,2.2861
+Quick (By Date),939100,0.9391
+Heap (By Date),1075200,1.0752
+Bubble (By Date),22011900,22.0119
+Insertion (By Date),8410200,8.4102
+Selection (By Date),10882400,10.8824
 
 10000 SONGS,,
-Sequential Search,1010500,1.0105
-Binary Search,4500,0.0045
-Merge (By Playcount),6150100,6.1501
-Quick (By Playcount),3673200,3.6732
-Heap (By Playcount),2066100,2.0661
-Bubble (By Playcount),131544200,131.5442
-Insertion (By Playcount),39916900,39.9169
-Selection (By Playcount),68836300,68.8363
-Merge (By Date),14943800,14.9438
-Quick (By Date),5258600,5.2586
-Heap (By Date),4981800,4.9818
-Bubble (By Date),799287800,799.2878
-Insertion (By Date),140021600,140.0216
-Selection (By Date),305821100,305.8211
+Sequential Search (By SongID),246300,0.2463
+Binary Search (By SongID),6900,0.0069
+Merge (By Playcount),4733100,4.7331
+Quick (By Playcount),5015900,5.0159
+Heap (By Playcount),2771700,2.7717
+Bubble (By Playcount),167031100,167.0311
+Insertion (By Playcount),44154900,44.1549
+Selection (By Playcount),63115000,63.115
+Merge (By Date),24686400,24.6864
+Quick (By Date),9135800,9.1358
+Heap (By Date),6290900,6.2909
+Bubble (By Date),801708700,801.7087
+Insertion (By Date),159589600,159.5896
+Selection (By Date),342398200,342.3982
