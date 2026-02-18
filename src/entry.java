@@ -51,15 +51,17 @@ public class entry {
 
     private static void testSequentialSearch(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
-        long time = Timer.timeSearch(() -> Search.sequentialSearch(testSongs, 5000));
-        recordResult("Sequential Search", time);
+        // Example: search for songId "Song5000" (update as needed)
+        long time = Timer.timeSearch(() -> Search.sequentialSearch(testSongs, "Tales from Bright Blood"));
+        recordResult("Sequential Search (By SongID)", time);
     }
 
     private static void testBinarySearch(ArrayList<Song> songs) {
         ArrayList<Song> testSongs = new ArrayList<>(songs);
         Sort.mergeSort(testSongs);
-        long time = Timer.timeSearch(() -> Search.binarySearch(testSongs, 5000));
-        recordResult("Binary Search", time);
+        // Example: search for songId "Song5000" (update as needed)
+        long time = Timer.timeSearch(() -> Search.binarySearch(testSongs, "Tales from Bright Blood"));
+        recordResult("Binary Search (By SongID)", time);
     }
 
     private static void testMergeSort(ArrayList<Song> songs) {

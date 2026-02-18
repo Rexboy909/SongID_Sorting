@@ -3,9 +3,9 @@ import java.util.ArrayList;
 public class Search {
 
     // Sequential (Linear) Search - O(n)
-    public static int sequentialSearch(ArrayList<Song> songs, int targetPlayCount) {
+    public static int sequentialSearch(ArrayList<Song> songs, String targetSongId) {
         for (int i = 0; i < songs.size(); i++) {
-            if (songs.get(i).getPlayCount() == targetPlayCount) {
+            if (songs.get(i).getSongId().equals(targetSongId)) {
                 return i;
             }
         }
@@ -13,16 +13,17 @@ public class Search {
     }
 
     // Binary Search - O(log n) - requires sorted array
-    public static int binarySearch(ArrayList<Song> songs, int targetPlayCount) {
+    public static int binarySearch(ArrayList<Song> songs, String targetSongId) {
         int left = 0, right = songs.size() - 1;
         
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            int midPlayCount = songs.get(mid).getPlayCount();
+            String midSongId = songs.get(mid).getSongId();
             
-            if (midPlayCount == targetPlayCount) {
+            int compare = midSongId.compareTo(targetSongId);
+            if (compare == 0) {
                 return mid;
-            } else if (midPlayCount < targetPlayCount) {
+            } else if (compare < 0) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
